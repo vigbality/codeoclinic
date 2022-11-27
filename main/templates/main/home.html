@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>EMP</title>
+  <link rel="stylesheet" href="{% static 'main/loginStyle.css' %}">
+  <link rel="stylesheet" href="{% static 'main/homeStyle.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!-- <script  src="{% static 'main/uploadCard.js' %}"></script> -->
+
+
+  
+
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+  }
+  </script>
+  
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+</head>
+<div id="google_translate_element" ></div>  
+<body>
+  
+    <nav class="navbar navbar-expand-sm  navbar fixed-top" style="background-color: #C4FBF7;">
+      <div class="container-fluid"  style="background-color: #C4FBF7;">
+          <a class="navbar-brand" href="/home/"><b><b>CODEO CLINIC</b></b></a>
+        
+        <form  id="logout" method="post" action="">
+            {% csrf_token %}
+            {% if mode == "t" %}
+            <button name="pastresults" type="submit" class="btn btn-primary nav-btn" type="button" style="border-radius: 50px;">Past Results</button>
+            {% endif %}
+            {% if mode == "d" or mode == "p" %}
+            <button name="inbox" type="submit" class="btn btn-primary nav-btn" type="button" style="border-radius: 50px;">Inbox</button>
+            {% endif %}
+            <button name="logout" type="submit" class="btn btn-primary nav-btn" type="button" style="border-radius: 50px;">Log Out</button>
+        </form>
+        </div>
+    </nav>
+
+
+    {% if mode == "p" %}
+
+
+    <div id="white-rect">
+      <img height=100 width="120" src="{% static 'main/logo.png ' %}" alt="" style="margin-left: -140px;margin-top:-20px;">
+      <h1 id="p-text"><b>Welcome!</b><br>Let an advanced expert system help you
+        diagnose and identify early signs of 
+        cadiomegaly</h1>
+      <img id="brop" src="{% static 'main/bro_p.png ' %}" alt="">
+      </div>
+
+
+
+    {% endif %}
+
+
+
+
+    {% if mode == "d" %}
+
+
+    <div id="white-rect">
+      <img height=100 width="120" src="{% static 'main/logo.png ' %}" alt="" style="margin-left: -140px;margin-top:-20px;">
+      <h1 id="p-text"><b>Welcome Doctor</b><br>Let an advanced expert system help you
+        diagnose and identify early signs of 
+        cadiomegaly</h1>
+      <img id="brop" src="{% static 'main/bro_d.png ' %}" alt="">
+      </div>
+
+
+
+    {% endif %}
+
+
+
+
+
+
+
+    {% if mode == "t" %}
+    <div id="white-rect">
+      <img height=100 width="120" src="{% static 'main/logo.png ' %}" alt="" style="margin-left: -142px;margin-top:-20px;">
+ 
+    <img id="bro2" src="{% static 'main/bro2.png ' %}" alt="">
+      <div id="t-form">
+        <form method="post" class="register-form" id="registerForm" action="" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input class="t-input" name="pphone" type="text" placeholder="Patient Phone number" required/><br><br><br>
+          <!-- <input class="t-input" name="pname" type="text" placeholder="Patient Name" required/><br><br><br>
+          <input class="t-input" name="page" type="text" placeholder="Patient Age" required/><br><br><br>
+          <input class="t-input" name="pcontact" type="text" placeholder="Patient Contact" required/><br><br> -->
+          
+
+          <input class="t-input" name="image" type="file" class="image" value="" accept=".png, .jpg, .jpeg" required><br><br>
+          <button class="btn btn-primary nav-btn" name="imageBtn" type="submit" style="border-radius: 50px;">Submit</button>
+        </form>
+      </div>
+    </div>
+      {% endif %}
+ 
+
+
+
+
+
+  
+
+
+
+
+</body>
+</html>

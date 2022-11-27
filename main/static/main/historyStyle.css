@@ -1,0 +1,96 @@
+<html><head></head><body>@import url(&#39;
+https://fonts.googleapis.com/css2?family=Inter:wght@300..800&amp;
+display=swap&#39;
+);
+ * {
+	 box-sizing: border-box;
+	 cursor: default;
+}
+ body {
+	 position: relative;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 min-height: 100vh;
+	 font-family: Inter;
+	 font-style: normal;
+	 background-color: #f8f9fc;
+     padding-top: 100px;
+}
+ .card {
+	 position: relative;
+	 overflow: hidden;
+	 display:flex;
+	 flex-direction: column;
+	 justify-content: space-between;
+	 align-items: center;
+	 height: auto;
+	 border: 1px solid #f2f1f5;
+	 border-radius: 8px;
+	 padding: 32px 48px;
+	 background-color: #fff;
+	 box-shadow: 0px 8px 16px -4px rgba(41, 48, 86, 0.2);
+	 transform: scale(1) translateY(16px);
+	 transition: all 0.4s cubic-bezier(0.56, 0.01, 0, 0.99);
+     margin: 20px auto 20px auto;
+     width: 70%;
+}
+ .card:hover {
+	 transform: scale(1.03);
+	 box-shadow: 0px 10px 16px -9px rgba(41, 48, 86, 0.6);
+	 background-color: #C4FBF7;
+}
+
+
+ .card:hover h1 {
+	 color: #000000;
+	 
+}
+ .card:hover button {
+	 background-color: #477ef9;
+	 color: #f8f9fc;
+}
+
+ .card h1 {
+	 font-weight: 700;
+	 font-size: 40px;
+	 color: #293056;
+	 z-index: 1;
+	 transition: all 0.4s cubic-bezier(0.56, 0.01, 0, 0.99) 0.025s;
+}
+ .card button {
+	 padding: 16px 40px;
+	 color: #7dc3b3;
+	 background-color: #fff;
+	 border: 2px solid #f2f1f5;
+	 border-radius: 50px;
+	 font-weight: 700;
+	 font-size: 14px;
+	 letter-spacing: 0.04em;
+	 text-transform: uppercase;
+	 z-index: 1;
+	 transition: all 0.2s cubic-bezier(0.56, 0.01, 0, 0.99);
+	 cursor: pointer;
+     width: 180px;
+}
+ .card button:hover {
+	 background-color: #3c4cc7;
+	 border: 2px solid #3c4cc7;
+}
+
+.options{
+    display: flex;
+  justify-content: space-between;
+}
+
+.nav-btn{
+	margin-right:10px;
+	width: 180px;
+	border-radius: 80px;
+}
+
+
+.xray-card{
+	border-radius: 40px;
+}
